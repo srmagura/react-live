@@ -4,6 +4,7 @@ import commonjs from '@rollup/plugin-commonjs';
 import { babel } from '@rollup/plugin-babel';
 import { terser } from 'rollup-plugin-terser';
 import filesize from 'rollup-plugin-filesize';
+import { visualizer } from 'rollup-plugin-visualizer';
 
 const plugins = [
   nodeResolve({
@@ -44,12 +45,13 @@ const prodPlugins = plugins.concat([
     preventAssignment: true,
   }),
   terser(),
-  filesize()
+  filesize(),
+  visualizer()
 ]);
 
 const base = {
   input: 'src/index.js',
-  external: ['react', 'react-dom', 'prism-react-renderer', 'buble']
+  external: ['react', 'react-dom', 'prism-react-renderer']
 };
 
 const output = {
@@ -57,7 +59,6 @@ const output = {
   globals: {
     'prism-react-renderer': 'Prism',
     react: 'React',
-    buble: 'Buble',
     'react-dom': 'ReactDOM'
   }
 };

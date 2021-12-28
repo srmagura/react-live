@@ -19,13 +19,12 @@
     "lint": "eslint --config .eslintrc \"./**/*.js\""
   },
   "dependencies": {
-    "@types/buble": "^0.20.0",
-    "buble": "0.19.6",
     "core-js": "^3.14.0",
     "dom-iterator": "^1.0.0",
     "prism-react-renderer": "^1.2.1",
     "prop-types": "^15.7.2",
     "react-simple-code-editor": "^0.11.0",
+    "sucrase": "^3.20.3",
     "unescape": "^1.0.1"
   },
   "devDependencies": {
@@ -62,6 +61,7 @@
     "rollup": "^2.55.1",
     "rollup-plugin-filesize": "^9.1.1",
     "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-visualizer": "^5.5.2",
     "styled-components": "^4.0.0-beta.8",
     "typescript": "^2.9.2",
     "typings-tester": "^0.3.1"

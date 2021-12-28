@@ -12,7 +12,6 @@ function LiveProvider({
   disabled,
   scope,
   transformCode,
-  transpileOptions,
   noInline = false
 }) {
   const [state, setState] = useState({
@@ -24,8 +23,7 @@ function LiveProvider({
     // Transpilation arguments
     const input = {
       code: transformCode ? transformCode(newCode) : newCode,
-      scope,
-      transpileOptions
+      scope
     };
 
     const errorCallback = error =>
@@ -47,7 +45,7 @@ function LiveProvider({
 
   useEffect(() => {
     transpile(code);
-  }, [code, scope, noInline, transformCode, transpileOptions]);
+  }, [code, scope, noInline, transformCode]);
 
   const onChange = newCode => transpile(newCode);
 
@@ -78,8 +76,7 @@ LiveProvider.propTypes = {
   noInline: PropTypes.bool,
   scope: PropTypes.object,
   theme: PropTypes.object,
-  transformCode: PropTypes.node,
-  transpileOptions: PropTypes.object
+  transformCode: PropTypes.func
 };
 
 LiveProvider.defaultProps = {
