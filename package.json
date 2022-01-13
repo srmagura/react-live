@@ -94,6 +94,8 @@
     "react live"
   ],
   "jest": {
+    "testEnvironment": "jsdom",
+    "resetMocks": true,
     "rootDir": "./src",
     "setupFiles": [
       "../jest.setup.js"
